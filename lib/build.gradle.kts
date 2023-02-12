@@ -4,7 +4,5 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.bundles.vertx)
-    implementation(libs.bundles.flogger)
-    testImplementation(libs.bundles.testing)
+    implementation(libs.jooq)
 }

@@ -10,6 +10,8 @@ flyway = "9.14.1"
 postgresql = "42.5.3"
 testcontainers = "1.17.6"
 jooq = "3.17.7"
+errorprone = "3.0.1"
+error_prone_core = "2.18.0"
 
 [libraries]
 vertx-deepchain = { module = "io.vertx:vertx-stack-depchain", version.ref = "vertx" }
@@ -31,9 +33,11 @@ jooq = { module = "org.jooq:jooq", version.ref = "jooq" }
 jooq-meta = { module = "org.jooq:jooq-meta", version.ref = "jooq" }
 jooq-meta-extensions = { module = "org.jooq:jooq-meta-extensions", version.ref = "jooq" }
 jooq-codegen = { module = "org.jooq:jooq-codegen", version.ref = "jooq" }
+errorprone = {module ="com.google.errorprone:error_prone_core", version.ref = "error_prone_core"}
 
 [plugins]
 shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shador" }
+errorprone = {id = "net.ltgt.errorprone", version.ref = "errorprone"}
 
 [bundles]
 flogger = ["flogger", "flogger-system-backend", "flogger-slf4j-backend", "logback-classic"]

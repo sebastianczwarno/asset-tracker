@@ -2,6 +2,7 @@ plugins {
     application
     id("com.scz.common-conventions")
     alias(libs.plugins.shadow)
+    alias(libs.plugins.errorprone)
 }
 
 val mainVerticleName = "com.assettracker.app.MainVerticle"
@@ -26,6 +27,7 @@ dependencies {
     implementation(libs.flyway)
     implementation(libs.postgresql)
     implementation(libs.bundles.jooq)
+    errorprone(libs.errorprone)
 }
 
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {

@@ -14,5 +14,5 @@ jooq:
   sqlMigrationFilesLocation: "lib/src/main/resources/db/migration/*.sql"
 
 flyway:
-  runMigration: false
+  runMigration: true
   locations: "filesystem:lib/src/main/resources/db/migration"

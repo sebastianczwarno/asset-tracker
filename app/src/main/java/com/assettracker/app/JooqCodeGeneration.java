@@ -1,15 +1,12 @@
 package com.assettracker.app;
 
 
-import com.google.common.flogger.FluentLogger;
 import org.jooq.codegen.GenerationTool;
 import com.assettracker.app.config.AppConfigReader;
 
 import org.jooq.meta.jaxb.*;
 
 public final class JooqCodeGeneration {
-    private static final FluentLogger _logger = FluentLogger.forEnclosingClass();
-
     public static void run(AppConfigReader config) {
         if (!config.getJooqRunCodeGeneration()) {
             return;

@@ -20,16 +20,12 @@ public class MainVerticle extends AbstractVerticle {
 
             var router = RoutesHandler.Config(vertx);
 
-            vertx.createHttpServer().requestHandler(router).listen(appPort, http -> {
-                if (http.succeeded()) {
-                    startPromise.complete();
-                    _logger.atInfo().log(String.format("HTTP server started on port %d", appPort));
-                } else {
-                    startPromise.fail(http.cause());
-                }
-            });
+            vertx.createHttpServer().requestHandler(router).listen(appPort).onSuccess(http -> {
+                startPromise.complete();
+                _logger.atInfo().log("Started on port %d", appPort);
+            }).onFailure(startPromise::fail);
         }).onFailure(failure -> {
-            _logger.atSevere().log(failure.getMessage());
+            _logger.atSevere().withCause(failure).log();
         });
     }
 }
