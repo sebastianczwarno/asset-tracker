@@ -7,12 +7,13 @@ db:
   userPassword: "password"
   schema: "asset_tracker_schema"
   url: "jdbc:postgresql://localhost:41110/asset-tracker"
+  port: 41110
+  host: "localhost"
 
 jooq:
   runCodeGeneration: false
   directory: "lib/src/main/java"
-  sqlMigrationFilesLocation: "lib/src/main/resources/db/migration/*.sql"
+  sqlMigrationFilesLocation: "app/src/main/resources/db/migration/*.sql"
 
 flyway:
   runMigration: true
-  locations: "filesystem:lib/src/main/resources/db/migration"

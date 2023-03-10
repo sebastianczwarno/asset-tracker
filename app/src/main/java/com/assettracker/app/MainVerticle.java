@@ -18,7 +18,8 @@ public class MainVerticle extends AbstractVerticle {
             FlywayMigration.run(config);
             JooqCodeGeneration.run(config);
 
-            var router = RoutesHandler.Config(vertx);
+            var pgPool = PgPoolFactory.create(vertx, config);
+            var router = RoutesHandler.Config(vertx, pgPool);
 
             vertx.createHttpServer().requestHandler(router).listen(appPort).onSuccess(http -> {
                 startPromise.complete();

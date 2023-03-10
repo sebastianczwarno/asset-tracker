@@ -35,7 +35,7 @@ CREATE TABLE asset_tracker_schema.asset_price_under_wallet
 (
     id bigserial NOT NULL PRIMARY KEY,
     wallet_id bigserial NOT NULL,
-    asset_name VARCHAR(50) NOT NULL ,
+    asset_name VARCHAR(50) NOT NULL,
     currency_code VARCHAR(3) NOT NULL,
     price decimal NOT NULL,
     CONSTRAINT fk_asset_price_under_wallet_wallet FOREIGN KEY (wallet_id) REFERENCES asset_tracker_schema.wallet (id)

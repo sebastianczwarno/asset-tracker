@@ -7,7 +7,6 @@ public class FlywayMigration {
     public static void run(AppConfigReader config) {
         if (!config.getFlywayRunMigration()) return;
         var flyway = Flyway.configure();
-        flyway.locations(config.getFlywayLocations());
         flyway.schemas(config.getDbSchema());
         flyway.dataSource(config.getDbUrl(), config.getDbUserName(), config.getDbUserPassword()).load().migrate();
     }

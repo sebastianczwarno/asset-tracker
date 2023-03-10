@@ -27,6 +27,7 @@ dependencies {
     implementation(libs.flyway)
     implementation(libs.postgresql)
     implementation(libs.bundles.jooq)
+    implementation(libs.vertx.pg.client)
     errorprone(libs.errorprone)
 }
 

@@ -39,6 +39,14 @@ public final class AppConfigReader {
         return _json.getJsonObject(DB).getString("url");
     }
 
+    public int getDbPort() {
+        return _json.getJsonObject(DB).getInteger("port");
+    }
+
+    public String getDbHost() {
+        return _json.getJsonObject(DB).getString("host");
+    }
+
     public boolean getJooqRunCodeGeneration() {
         return _json.getJsonObject(JOOQ).getBoolean("runCodeGeneration");
     }
@@ -53,9 +61,5 @@ public final class AppConfigReader {
 
     public boolean getFlywayRunMigration() {
         return _json.getJsonObject(FLYWAY).getBoolean("runMigration");
-    }
-
-    public String getFlywayLocations() {
-        return _json.getJsonObject(FLYWAY).getString("locations");
     }
 }
